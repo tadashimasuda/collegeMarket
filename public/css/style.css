@@ -196,6 +196,11 @@ a.item_title{
    footer
 ========================================= */
 
-
+footer{
+    height: 150px;
+    width: 100%;
+    border-top: 1px solid gray;
+    margin-top: 50px;
+}
 
 
