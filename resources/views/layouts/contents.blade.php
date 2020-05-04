@@ -15,7 +15,7 @@
     <header>
         <div class="header_inner">
             <div class="header_title">
-                <a href="#">
+                <a href="top">
                     <h1>collegeMart</h1>
                 </a>
             </div>
