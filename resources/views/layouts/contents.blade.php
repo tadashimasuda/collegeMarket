@@ -21,7 +21,7 @@
             </div>
 
             <form method="form" action="#" class="search_container">
-                <input type="text" id="search_text" placeholder="キーワード">
+                <input type="text" id="search_text" placeholder="">
                 <input type="submit" value="検索" id="search_icon">
                 <div class="clear_fix"></div>
             </form>
