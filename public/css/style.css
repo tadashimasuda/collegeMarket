@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+/* ========================================
+    リセットcss
+========================================= */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-style:normal;
+	font-weight: normal;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html{overflow-y: scroll;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: ''; content: none;}
+input, textarea{margin: 0; padding: 0;}
+ol, ul{list-style:none;}
+table{border-collapse: collapse; border-spacing:0;}
+caption, th{text-align: left;}
+a:focus {outline:none;}
+
+/* micro clearfix */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {clear: both;}
+.cf {*zoom: 1;}
+
+body{
+    background-color: rgb(245, 245, 245);
+    color: rgb(51, 51, 51);
+    text-decoration: none;
+}
+.wrapper{
+    width: 1020px;
+    max-width: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+a{
+    text-decoration: none;
+    font-size: 12px;
+}
+div.clear_fix{
+    clear: both;
+}
+/* ========================================
+    header
+========================================= */
+
+header{
+    height: 90px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    padding-top: 10px;
+}
+div.header_inner{
+    width: 1020px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+div.header_title a h1{
+    float: left;
+    font-size: 25px;
+}
+form.search_container{
+    width: 766px;
+    height: 40px;
+    border: 2px solid rgb(235, 235, 235);
+    background-color: rgb(245, 245, 245);
+    float: right;
+    border-radius: 0.3em;
+}
+
+form.search_container input{
+    border: none;
+    height: 100%;
+    background-color: rgb(245, 245, 245);
+    
+}
+input#search_text{
+    width: 700px;
+}
+input#search_icon{
+    float: right;
+    width: 62px;
+}
+ul#header_account{
+    list-style: none;
+    float: right;
+    margin-top: 8px;
+    font-size: 12px;
+}
+ul#header_account li#login{
+    float: left;
+    width: 80px;
+    height: 28px;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 0.3em;
+    text-align: center;
+    line-height: 28px;
+}
+ul#header_account li#login a{
+    color: #fff;
+}
+ul#header_account li#new_account{
+    float: left;
+    width: 80px;
+    height: 28px;
+    font-weight: bold;
+    background-color: white;
+    border: 0.5px solid #0877A8;
+    margin-right: 10px;
+    border-radius: 0.3em;
+    text-align: center;
+    line-height: 28px;
+}
+ul#header_account li#new_account a{
+    color: #0877a8;
+}
+
+/* ========================================
+   main
+========================================= */
