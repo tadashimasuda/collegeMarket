@@ -11,7 +11,7 @@
 
         <!-- 変更ここから -->
         <div id="top_img">
-            <img src="img.png" alt="">
+            <img src="image/img.png" alt="">
         </div>
         <div class="wrapper">
             <div class="items">

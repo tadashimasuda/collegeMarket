@@ -44,6 +44,7 @@
 
     </main>
     <footer>
+        
         @yield('footer')
     </footer>
 
