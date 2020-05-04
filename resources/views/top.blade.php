@@ -8,7 +8,6 @@
     @endsection
 
     @section('main')
-
         <!-- 変更ここから -->
         <div id="top_img">
             <img src="image/img.png" alt="">

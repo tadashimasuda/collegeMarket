@@ -19,6 +19,9 @@ Route::get('/top', function () {
 Route::get('/search_items', function () {
     return view('search_items');
 });
+Route::get('/login_form', function () {
+    return view('auth/login_form');
+});
 
 
 Route::get('/', function () {
