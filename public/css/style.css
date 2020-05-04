@@ -228,9 +228,55 @@ div#login_form{
     height: 600px;
     margin: 0 auto;
     background-color: rgb(250, 250, 250);
-    border: 1px solid rgb(175, 175, 175);
+    /* border: 1px solid rgb(175, 175, 175); */
     margin-top: 50px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 0.3em;
+    padding-top: 50px;
 } 
+h2#login_titie{
+    font-size: 25px;
+    text-align: center;
+}
+form#twitter_form{
+    width: 300px;
+    margin: 0 auto;
+}
+input#twitter_login{
+    margin-top: 60px;
+    width: 300px;
+    height: 40px;
+    background: #19bbf7;
+    border-radius: 0.3em;
+    color: white;
+}
+form#account_login table{
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+form#account_login table input#email{
+    width: 300px;
+    height: 40px;
+    font-size: 12px;
+
+}
+form#account_login table input#password{
+    margin-top: 15px;
+    width: 300px;
+    height: 40px;
+    font-size: 12px;
+
+}
+input#submit_login{
+    margin-top: 15px;
+    font-size: 12px;
+    background-color: red;
+    color: white;
+    padding: 15px 115px;
+    border-radius: 0.3em;
+}
+
 /* ========================================
    footer
 ========================================= */
