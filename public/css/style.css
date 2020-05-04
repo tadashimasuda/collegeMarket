@@ -146,7 +146,6 @@ ul#header_account li#new_account a{
    main
 ========================================= */
 
-/* 変更ここから */
 div#top_img {
     margin-top: 30px;
 }
@@ -190,6 +189,13 @@ a.item_title{
     margin-left: 5px;
     width: 150px;
     padding: 15px 15px;
+}
+
+/* search_items */
+h2#search_title{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
 }
 
 /* ========================================
