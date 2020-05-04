@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('title');
-            $table->string('item_description');
+            $table->string('item_description','500');
             $table->string('item_img')->default('default_item.png');
             $table->integer('price');
             $table->integer('category');
