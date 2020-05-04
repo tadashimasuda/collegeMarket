@@ -196,6 +196,17 @@ h2#search_title{
     text-align: center;
     font-size: 30px;
     margin-top: 50px;
+ 
+}
+form#select_form{
+    width: 90px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+select#order{
+    width: 90px;
+    height: 20px;
+    margin: 0 auto;
 }
 
 /* ========================================
