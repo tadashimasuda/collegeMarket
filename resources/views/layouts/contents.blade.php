@@ -29,7 +29,7 @@
             <nav>
                 <ul id="header_account">
                     <li id="new_account"><a href="#">新規作成</a></li>
-                    <li id="login"><a href="#">ログイン</a></li>
+                    <li id="login"><a href="login_form">ログイン</a></li>
                     <div class="clear_fix"></div>
                 </ul>
             </nav>
