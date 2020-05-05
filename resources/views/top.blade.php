@@ -19,7 +19,7 @@
                     @foreach($items as $item)
                     <li class="item">
                         <div class="item_img">
-                            <img src="{{ $item->item_img }}" alt="">
+                            <img src="image/{{ $item->item_img }}" alt="">
                         </div>
                         <div class="item_info">
                             <a href="#" class="item_title">{{ $item->title }}</a>

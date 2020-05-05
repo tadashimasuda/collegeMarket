@@ -179,6 +179,10 @@ div.item_img{
     height: 190px;
     width: 100%;
 }
+div.item_img img{
+    height: 100%;
+    width: 100%;
+}
 div.item_info{
     height: 60px;
     border-top: 1px solid gray;
