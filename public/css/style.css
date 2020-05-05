@@ -185,14 +185,23 @@ div.item_img img{
 }
 div.item_info{
     height: 60px;
+    width: 100%;
     border-top: 1px solid gray;
+
+}
+div.item_title_box{
+    overflow: hidden;
+    width: 130px;
+
 }
 a.item_title{
     line-height: 60px;
     color: black;
     margin-left: 5px;
-    width: 150px;
+    width: 100%;
     padding: 15px 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* search_items */

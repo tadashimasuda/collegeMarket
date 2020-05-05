@@ -22,7 +22,9 @@
                             <img src="image/{{ $item->item_img }}" alt="">
                         </div>
                         <div class="item_info">
-                            <a href="#" class="item_title">{{ $item->title }}</a>
+                            <div class="item_title_box">
+                                <a href="#" class="item_title">{{ $item->title }}</a>
+                            </div>
                             <div class="item_like">
 
                             </div>
