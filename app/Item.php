@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     //
-    public function scopeNameEqual($query,$str){
-
+    public function scopeNameLike($query,$str){
        return $query->where('title','like',"%{$str}%");
     }
 }

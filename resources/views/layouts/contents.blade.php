@@ -19,7 +19,6 @@
                     <h1>collegeMart</h1>
                 </a>
             </div>
-
             <form method="form" action="/items/find" class="search_container">
                 <input type="text" id="search_text" name="search_text" placeholder="">
                 <input type="submit" value="検索" id="search_icon">

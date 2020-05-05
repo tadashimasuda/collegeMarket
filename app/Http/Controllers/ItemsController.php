@@ -25,8 +25,7 @@ class ItemsController extends Controller
     public function search(Request $request){
 
         //form input
-        $items = Item::NameEqual( $request->search_text)->get();
-        $param = ['input' => $request->search_text,'items'=>$items];
+        $items = Item::Namelike( $request->search_text)->get();
         return view('search_items',['items' => $items,'input' => $request->search_text]);
         
     }

@@ -10,7 +10,6 @@
 @section('main')
 <div class="wrapper">
     <h2 id="search_title">検索結果</h2>
-
     <form action="#" method="get" id="select_form">
         <select name="" id="order">
 
@@ -18,21 +17,23 @@
     </form>
     <div id="search_items">
         <ul class="main_items">
-            
             @foreach( $items as $item )
-            <li class="item">
-                <div class="item_img">
-                    <img src="image/{{ $item->item_img }}" alt="">
-                </div>
-                <div class="item_info">
-                    <div class="item_title_box">
-                        <a href="#" class="item_title">{{ $item->title }}</a>
+                @empty($item)
+                    <p class="non-item">アイテムがありません</p>
+                @endempty
+                <li class="item">
+                    <div class="item_img">
+                        <img src="image/{{ $item->item_img }}" alt="">
                     </div>
-                    <div class="item_like">
+                    <div class="item_info">
+                        <div class="item_title_box">
+                            <a href="#" class="item_title">{{ $item->title }}</a>
+                        </div>
+                        <div class="item_like">
 
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
             @endforeach
             <div class="clear_fix"></div>
         </ul>
