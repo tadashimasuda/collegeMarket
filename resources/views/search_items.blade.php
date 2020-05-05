@@ -18,14 +18,16 @@
     </form>
     <div id="search_items">
         <ul class="main_items">
-          
+            
             @foreach( $items as $item )
             <li class="item">
                 <div class="item_img">
                     <img src="image/{{ $item->item_img }}" alt="">
                 </div>
                 <div class="item_info">
-                    <a href="#" class="item_title">{{ $item->title }}</a>
+                    <div class="item_title_box">
+                        <a href="#" class="item_title">{{ $item->title }}</a>
+                    </div>
                     <div class="item_like">
 
                     </div>
