@@ -18,116 +18,20 @@
     </form>
     <div id="search_items">
         <ul class="main_items">
+          
+            @foreach( $items as $item )
             <li class="item">
                 <div class="item_img">
-                    <img src="" alt="">
+                    <img src="image/{{ $item->item_img }}" alt="">
                 </div>
                 <div class="item_info">
-                    <a href="#" class="item_title">タイトルタイトル</a>
+                    <a href="#" class="item_title">{{ $item->title }}</a>
                     <div class="item_like">
 
                     </div>
                 </div>
             </li>
-            <li class="item">
-                <div class="item_img">
-                    <img src="" alt="">
-                </div>
-                <div class="item_info">
-                    <a href="#" class="item_title">タイトルタイトル</a>
-                    <div class="item_like">
-
-                    </div>
-                </div>
-            </li>
-            <li class="item">
-                <div class="item_img">
-                    <img src="" alt="">
-                </div>
-                <div class="item_info">
-                    <a href="#" class="item_title">タイトルタイトル</a>
-                    <div class="item_like">
-
-                    </div>
-                </div>
-            </li>
-            <li class="item">
-                <div class="item_img">
-                    <img src="" alt="">
-                </div>
-                <div class="item_info">
-                    <a href="#" class="item_title">タイトルタイトル</a>
-                    <div class="item_like">
-
-                    </div>
-                </div>
-            </li>
-            <li class="item">
-                <div class="item_img">
-                    <img src="" alt="">
-                </div>
-                <div class="item_info">
-                    <a href="#" class="item_title">タイトルタイトル</a>
-                    <div class="item_like">
-
-                    </div>
-                </div>
-            </li>
-            <div class="clear_fix"></div>
-            <li class="item">
-                <div class="item_img">
-                    <img src="" alt="">
-                </div>
-                <div class="item_info">
-                    <a href="#" class="item_title">タイトルタイトル</a>
-                    <div class="item_like">
-
-                    </div>
-                </div>
-            </li>
-            <li class="item">
-                <div class="item_img">
-                    <img src="" alt="">
-                </div>
-                <div class="item_info">
-                    <a href="#" class="item_title">タイトルタイトル</a>
-                    <div class="item_like">
-
-                    </div>
-                </div>
-            </li>
-            <li class="item">
-                <div class="item_img">
-                    <img src="" alt="">
-                </div>
-                <div class="item_info">
-                    <a href="#" class="item_title">タイトルタイトル</a>
-                    <div class="item_like">
-
-                    </div>
-                </div>
-            </li>
-            <li class="item">
-                <div class="item_img">
-                    <img src="" alt="">
-                </div>
-                <div class="item_info">
-                    <a href="#" class="item_title">タイトルタイトル</a>
-                    <div class="item_like">
-
-                    </div>
-                </div>
-            </li>
-            <li class="item">
-                <div class="item_img">
-                    <img src="" alt="">
-                </div>
-                <div class="item_info">
-                    <a href="#" class="item_title">タイトルタイトル</a>
-                    <div class="item_like">
-                    </div>
-                </div>
-            </li>
+            @endforeach
             <div class="clear_fix"></div>
         </ul>
     </div>

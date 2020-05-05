@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Item;
 use Illuminate\Http\Request;
+use Laravel\Ui\Presets\React;
 
 class ItemsController extends Controller
 {
@@ -15,9 +16,19 @@ class ItemsController extends Controller
      */
     public function index()
     {
-        //
-        $items = Item::all();
-        return view('top', ['items' => $items]);
+        //show toppage　or form input -> null
+        if(empty($request)){
+            $items = Item::all();
+            return view('top', ['items' => $items]);
+        }
+    }
+    public function search(Request $request){
+
+        //form input
+        $items = Item::NameEqual( $request->search_text)->get();
+        $param = ['input' => $request->search_text,'items'=>$items];
+        return view('search_items',['items' => $items]);
+        
     }
 
     /**

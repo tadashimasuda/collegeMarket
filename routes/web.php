@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/top','ItemsController@index');
 
-Route::get('/search_items', function () {
-    return view('search_items');
-});
+Route::get('/items/find','ItemsController@search');
+
+
+
+
 Route::get('/login_form', function () {
     return view('auth/login_form');
 });
@@ -27,7 +29,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('items', 'ItemsController')->only(['index']);
+//Route::resource('items', 'ItemsController')->only(['index']);
 
 Auth::routes();
 
