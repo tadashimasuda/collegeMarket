@@ -5,7 +5,7 @@
 <div class="wrapper">
     <div id="login_form">
         <h2 id="register_titie">新規作成</h2>
-        <form method="POST" id="register_form" action="{{ route('register') }}">
+        <form method="POST" id="register_form" enctype="multipart/form-data" action="{{ route('register') }}">
             @csrf
             <div class="div_register_form">
                 <label for="name" class="account_register_label">{{ __('Name') }}</label>

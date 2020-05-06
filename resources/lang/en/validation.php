@@ -118,6 +118,9 @@ return [
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
 
+    //add 
+    'image' =>'this image cannot use',
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

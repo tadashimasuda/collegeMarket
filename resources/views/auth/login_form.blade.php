@@ -15,7 +15,7 @@
             <input type="submit" id="twitter_login" value="Twitterでログイン">
         </form>
 
-        <form method="POST" action="#" id="account_login">
+        <form method="POST" action="{{ route('login') }}" id="account_login">
             <!-- action="{{ route('login') }} -->
             @csrf
             <table>

@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image;
 
 class RegisterController extends Controller
 {
@@ -53,7 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'user_img' => ['image|mimes:jpeg,png,jpg|max:1024|']
+            // 'user_img' => ['required|file|image|mimes:jpeg,png,jpg,gif|max:2048'],
         ]);
     }
 
@@ -65,10 +66,30 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //make user_img path　and save image
+        // if($data['user_img']){
+        //     //
+        //     $user_img =  'user_img_'.date('Y-m-d H:m:s') . '.jpg';
+        //     $image = $data['user_img']; 
+        //     $image->storeAs('public/images', date('Y-m-d H:m:s').'.jpg');
+        //     $image->save();
+
+        // }else{
+        //     $user_img = null;
+        // }
+
+        $request = app('request');
+        if($request->hasfile('user_img')){
+            $user_img = $request->file('user_img');
+            $filename = 'user_img_'.date('Y-m-d H:m:s') . '.jpg';
+            Image::make($user_img)->save( public_path($filename) );
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'user_img' => $filename,
+            'college' => $data['college']
         ]);
     }
 }
