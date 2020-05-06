@@ -15,7 +15,7 @@
     <header>
         <div class="header_inner">
             <div class="header_title">
-                <a href="top">
+                <a href="/top">
                     <h1>collegeMart</h1>
                 </a>
             </div>
@@ -27,8 +27,8 @@
             <div class="clear_fix"></div>
             <nav>
                 <ul id="header_account">
-                    <li id="new_account"><a href="#">新規作成</a></li>
-                    <li id="login"><a href="login_form">ログイン</a></li>
+                    <li id="new_account"><a href="/select_register">新規作成</a></li>
+                    <li id="login"><a href="/login_form">ログイン</a></li>
                     <div class="clear_fix"></div>
                 </ul>
             </nav>

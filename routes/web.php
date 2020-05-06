@@ -23,7 +23,9 @@ Route::get('/items/find','ItemsController@search');
 Route::get('/login_form', function () {
     return view('auth/login_form');
 });
-
+Route::get('/select_register', function () {
+    return view('auth/select_register');
+});
 
 Route::get('/', function () {
     return view('welcome');

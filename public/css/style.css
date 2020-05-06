@@ -163,15 +163,15 @@ div.items h2{
 div.items ul{
     margin-top: 20px;
     width: 100%;
-    padding-left: 30px;
+    /* padding-left: 30px; */
 }
 div.items ul.main_items li.item{
-    width: 180px;
+    width: 182px;
     height:250px;
     background-color: #fff;
     float: left;
     margin-right: 22px;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     border-radius: 0.3em;
 }
@@ -187,7 +187,6 @@ div.item_info{
     height: 60px;
     width: 100%;
     border-top: 1px solid gray;
-
 }
 div.item_title_box{
     overflow: hidden;
@@ -203,7 +202,6 @@ a.item_title{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 /* search_items */
 h2#search_title{
     text-align: center;
@@ -246,7 +244,8 @@ div#login_form{
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     border-radius: 0.3em;
     padding-top: 50px;
-} 
+}
+
 h2#login_titie{
     font-size: 25px;
     text-align: center;
@@ -279,7 +278,6 @@ form#account_login table input#password{
     width: 300px;
     height: 40px;
     font-size: 12px;
-
 }
 input#submit_login{
     margin-top: 15px;
@@ -288,6 +286,29 @@ input#submit_login{
     color: white;
     padding: 15px 115px;
     border-radius: 0.3em;
+}
+a.register_twitter_form{
+    margin-top: 60px;
+    width: 300px;
+    height: 40px;
+    background: #19bbf7;
+    border-radius: 0.3em;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    display: block;
+}
+
+a.register_email_form{
+    margin-top: 60px;
+    width: 300px;
+    height: 40px;
+    background: red;
+    border-radius: 0.3em;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    display: block;
 }
 
 /* ========================================

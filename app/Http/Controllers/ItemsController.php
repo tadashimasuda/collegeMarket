@@ -22,12 +22,11 @@ class ItemsController extends Controller
             return view('top', ['items' => $items]);
         }
     }
-    public function search(Request $request){
 
-        //form input
-        $items = Item::Namelike( $request->search_text)->get();
+    //serch like word from form_input 
+    public function search(Request $request){
+        $items = Item::Namelike($request->search_text)->get();
         return view('search_items',['items' => $items,'input' => $request->search_text]);
-        
     }
 
     /**
