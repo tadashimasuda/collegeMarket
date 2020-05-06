@@ -316,6 +316,26 @@ a.register_email_form{
     font-size: 14px;
     line-height: 40px;
 }
+div.div_register_form{
+    margin: 0 auto;
+    width: 200px;
+}
+form#register_form{
+    margin: 0 auto;
+    width: 150px;
+}
+
+h2#register_titie{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+div.register_input{
+    margin-bottom: 20px;
+}
+label.account_register_label{
+    text-align: center;
+}
 
 /* ========================================
    footer
