@@ -287,28 +287,34 @@ input#submit_login{
     padding: 15px 115px;
     border-radius: 0.3em;
 }
+
+
 a.register_twitter_form{
-    margin-top: 60px;
-    width: 300px;
+    margin: 60px auto 0 auto;
+    width: 280px;
     height: 40px;
     background: #19bbf7;
     border-radius: 0.3em;
     color: white;
-    padding: 5px 20px;
+    padding: 5px 15px;
     text-align: center;
     display: block;
+    font-size: 14px;
+    line-height: 40px;
 }
 
 a.register_email_form{
-    margin-top: 60px;
-    width: 300px;
+    margin: 60px auto 0 auto;
+    width: 280px;
     height: 40px;
     background: red;
     border-radius: 0.3em;
     color: white;
-    padding: 5px 20px;
+    padding: 5px 15px;
     text-align: center;
     display: block;
+    font-size: 14px;
+    line-height: 40px;
 }
 
 /* ========================================
