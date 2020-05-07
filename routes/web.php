@@ -12,11 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//top page
 Route::get('/top','ItemsController@index');
 
+//items find keyword
 Route::get('/items/find','ItemsController@search');
 
+//show item detail
+Route::get('/item/{id}','ItemsController@show');
+
+//Route::resource('items', 'ItemsController')->only(['index']);
 
 //----------
 
@@ -38,7 +43,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::resource('items', 'ItemsController')->only(['index']);
+
 
 Auth::routes();
 

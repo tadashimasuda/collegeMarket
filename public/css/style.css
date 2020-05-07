@@ -337,6 +337,72 @@ label.account_register_label{
     text-align: center;
 }
 
+/* item detail */
+div#item_detail{
+    width: 500px;
+    height: auto;
+    min-height: 550px;
+    margin: 50px auto 0 auto;
+    background: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    padding-top: 25px;
+}
+h2#item_detail_title{
+    font-size: 26px;
+    text-align: center;
+}
+div#item_detail_img {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto 20px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+div#item_detail_img img{
+    width: 320px;
+    height: 320px;
+}
+p#item_detail_price{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+div#item_detail_business_box{
+    width: 280px;
+    margin: 0 auto 20px auto; 
+}
+a#item_detail_business{
+    padding: 10px 100px;
+    color: white;
+    font-size: 18px;
+    background-color: red;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+div#item_description_box{
+    width: 370px;
+    height: auto;
+    margin: 0 auto;
+}
+p#item_description_title{
+    text-align: left;
+    font-weight: bold;
+}
+p#item_description{
+    margin-top: 10px;
+
+}
+div#item_detail_comment_box{
+    width: 370px;
+    height: auto;
+    margin: 0 auto 0 auto;
+}
+h3#item_detail_comment{
+    margin-top: 10px;
+    text-align: left;
+    font-weight: bold;
+}
 /* ========================================
    footer
 ========================================= */

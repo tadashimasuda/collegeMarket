@@ -14,13 +14,11 @@ class ItemsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //show toppage　or form input -> null
-        if(empty($request)){
             $items = Item::all();
             return view('top', ['items' => $items]);
-        }
     }
 
     //serch like word from form_input 
@@ -56,9 +54,15 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
         //
+        if($request->id){
+            $item = Item::itemDetail($request->id)->get();
+            return view('item',['item' => $item]);
+        }else{
+            route('top');
+        }
     }
 
     /**
