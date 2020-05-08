@@ -40,6 +40,11 @@
             <div id="item_comment">
                 <!-- foreachでコメント回す -->
             </div>
+            <form action="#" id="item_comment_form" method="get">
+                <input type="hidden" value="{{ $item->id }}">
+                <input type="text" id="item_comment_text" placeholder="コメントをご記入ください">
+                <input type="submit" id="item_comment_btn" value="送信">
+            </form>
         </div>
     </div>
 </div>
