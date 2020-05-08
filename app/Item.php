@@ -10,8 +10,12 @@ class Item extends Model
     public function scopeNameLike($query,$str){
        return $query->where('title','like',"%{$str}%");
     }
+    //detail item 
     public function scopeitemDetail($query,$str){
-        //mauch id 
         return $query->where('id',$str);
     }
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+   
 }

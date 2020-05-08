@@ -393,15 +393,62 @@ p#item_description{
     margin-top: 10px;
 
 }
+/* item user  */
+div#item_user_box{
+    width: 370px;
+    max-width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+    margin-top: 20px;
+    clear: both;
+}
+h3#item_user_title{
+    text-emphasis: left;
+    font-weight: bold;
+}
+ul#item_user li{
+    float: left;
+}
+ul#item_user li#item_user_img{
+    border: 1px solid black;
+    height: 25px;
+    width: 25px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+ul#item_user li#item_user_name{
+    margin-left: 10px;
+    line-height: 50px;
+}
+ul#item_user li#item_user_name a{
+    font-size: 20px;
+}
+p#item_user_name_icon{
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
 div#item_detail_comment_box{
     width: 370px;
     height: auto;
+    min-height: 300px;
     margin: 0 auto 0 auto;
+    margin-top: 20px;
+    border: 1px solid black;
 }
 h3#item_detail_comment{
-    margin-top: 10px;
     text-align: left;
     font-weight: bold;
+    font-size: 15px;
+}
+div#item_comment{
+    height: auto;
+    width: 100%;
+    border: 1px solid black;
+    min-height: 200px;
 }
 /* ========================================
    footer

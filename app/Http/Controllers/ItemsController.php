@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Validator;
 use App\Item;
+use App\User;
 use Illuminate\Http\Request;
 use Laravel\Ui\Presets\React;
 
@@ -58,8 +59,10 @@ class ItemsController extends Controller
     {
         //
         if($request->id){
-            $item = Item::itemDetail($request->id)->get();
-            return view('item',['item' => $item]);
+            $item = Item::itemDetail($request->id)->first();
+            $user = User::find($item->user_id)->first();
+            // $user = Item::where('id',$request->id)->with('user')->first();
+            return view('item',['item' => $item,'user' =>$user]);
         }else{
             route('top');
         }
