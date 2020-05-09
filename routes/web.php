@@ -21,6 +21,9 @@ Route::get('/items/find','ItemsController@search');
 //show item detail
 Route::get('/item/{id}','ItemsController@show');
 
+//item comment
+Route::post('/comment','CommentsController@create');
+
 //Route::resource('items', 'ItemsController')->only(['index']);
 
 //----------

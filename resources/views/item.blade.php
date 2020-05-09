@@ -16,7 +16,8 @@
         </div>
         <p id="item_detail_price">価格：{{$item->price}}円</p>
         <div id="item_detail_business_box">
-            <a href="#" id="item_detail_business">取引する</a>
+            <a href="#" id="item_detail_business">購入する</a>
+            <p>※価格交渉はコメント欄をご使用ください</p>
         </div>
         <div id="item_description_box">
             <p id='item_description_title'>商品詳細</p>
@@ -40,11 +41,19 @@
             <div id="item_comment">
                 <!-- foreachでコメント回す -->
             </div>
-            <form action="#" id="item_comment_form" method="get">
-                <input type="hidden" value="{{ $item->id }}">
-                <input type="text" id="item_comment_text" placeholder="コメントをご記入ください">
-                <input type="submit" id="item_comment_btn" value="送信">
-            </form>
+            @if(Auth::check()){
+                <form action="{{ url('comment')}}" id="item_comment_form" method="post">
+                    <input type="hidden" name="itemUserId" value="{{ $item->user_id }}">
+                    <input type="hidden" name="itemId" value="{{ $item->id }}">
+                    <input type="text" id="item_comment_text" name="itemComment" placeholder="コメントをご記入ください">
+                    <input type="submit" id="item_comment_btn" value="送信">
+                </form>
+            }
+            @else
+                <p>アカウントをお持ちでないとコメントはできません</p>
+                <a href="/login_form">ログインする</a>
+            @endif
+
         </div>
     </div>
 </div>

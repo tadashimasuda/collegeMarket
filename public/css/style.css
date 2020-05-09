@@ -379,6 +379,11 @@ a#item_detail_business{
     background-color: red;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
+div#item_detail_business_box p{
+    font-size: 6px;
+    text-align: center;
+    margin-top: 10px;
+}
 
 div#item_description_box{
     width: 370px;
@@ -400,8 +405,7 @@ div#item_user_box{
     height: 50px;
     margin: 0 auto;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-
-    margin-top: 20px;
+    margin-top: 46px;
     clear: both;
 }
 h3#item_user_title{
