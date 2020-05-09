@@ -17,6 +17,7 @@ class CommentsController extends Controller
     public function create(Request $request,Comment $comment){
         $itemSenderId = Auth::id();
         $comment->addComment($itemSenderId,$request->itemId,$request->itemComment);
-        redirect('/item/'+$request->itemId);
+        // redirect('/item/'.$request->itemId);
+        redirect('top');
     }
 }

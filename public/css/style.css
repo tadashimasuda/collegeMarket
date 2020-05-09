@@ -457,6 +457,24 @@ div#item_comment{
     overflow: scroll;
 }
 
+
+/*  show comment */
+/* ul#commets{
+    height: auto;
+    width: 100%;
+} */
+li#comment{
+    height: auto;
+    width: 100%;
+    border: 1px solid black;
+    font-size: 12px;
+    line-height: 12px;
+}
+li#comment img{
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+}
 /* comment form */
 form#item_comment_form{
     width: 100%;
@@ -480,6 +498,7 @@ input#item_comment_btn{
     border: 1px solid white;
     padding: 8px 0;
 }
+
 /* ========================================
    footer
 ========================================= */

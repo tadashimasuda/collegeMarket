@@ -40,15 +40,23 @@
             <h3 id="item_detail_comment">コメント</h3>
             <div id="item_comment">
                 <!-- foreachでコメント回す -->
+                <ul id="comments">
+                    @foreach($comments as $comment)
+                        <li id="comment">
+                            <img src="/image/" alt="" >
+                            <p>{{$comment -> content }}</p>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
-            @if(Auth::check()){
+            @if(Auth::check())
                 <form action="{{ url('comment')}}" id="item_comment_form" method="post">
+                    @csrf
                     <input type="hidden" name="itemUserId" value="{{ $item->user_id }}">
                     <input type="hidden" name="itemId" value="{{ $item->id }}">
                     <input type="text" id="item_comment_text" name="itemComment" placeholder="コメントをご記入ください">
                     <input type="submit" id="item_comment_btn" value="送信">
                 </form>
-            }
             @else
                 <p>アカウントをお持ちでないとコメントはできません</p>
                 <a href="/login_form">ログインする</a>
@@ -57,5 +65,4 @@
         </div>
     </div>
 </div>
-
 @endsection
