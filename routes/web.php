@@ -24,6 +24,10 @@ Route::get('/item/{id}','ItemsController@show');
 //item comment
 Route::post('/comment','CommentsController@create');
 
+//show userpage
+Route::get('/user/{id}','UsersController@index');
+
+
 //Route::resource('items', 'ItemsController')->only(['index']);
 
 //----------

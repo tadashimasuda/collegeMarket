@@ -456,24 +456,28 @@ div#item_comment{
     background-color: rgb(245, 245, 245);
     overflow: scroll;
 }
-
-
 /*  show comment */
 /* ul#commets{
     height: auto;
     width: 100%;
 } */
 li#comment{
-    height: auto;
+    height: 30px;
     width: 100%;
     border: 1px solid black;
     font-size: 12px;
-    line-height: 12px;
+    
 }
 li#comment img{
     border: 1px solid black;
     height: 30px;
     width: 30px;
+    float: left;
+}
+li#comment p{
+    float: left;
+    height: 30px;
+    line-height: 12px;
 }
 /* comment form */
 form#item_comment_form{
