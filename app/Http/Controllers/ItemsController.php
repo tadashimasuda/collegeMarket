@@ -11,6 +11,7 @@ use Laravel\Ui\Presets\React;
 
 class ItemsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *

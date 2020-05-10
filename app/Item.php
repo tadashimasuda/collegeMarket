@@ -17,5 +17,9 @@ class Item extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    public function scopeuserItem($query,$id){
+        return $this->where('user_id',$id);
+    }
    
 }

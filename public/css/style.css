@@ -187,6 +187,7 @@ div.item_info{
     height: 60px;
     width: 100%;
     border-top: 1px solid gray;
+
 }
 div.item_title_box{
     overflow: hidden;
@@ -339,7 +340,7 @@ label.account_register_label{
 
 /* item detail */
 div#item_detail{
-    width: 500px;
+    width: 600px;
     height: auto;
     min-height: 550px;
     margin: 50px auto 0 auto;
@@ -465,8 +466,7 @@ li#comment{
     height: 30px;
     width: 100%;
     border: 1px solid black;
-    font-size: 12px;
-    
+    font-size: 12px; 
 }
 li#comment img{
     border: 1px solid black;
@@ -485,7 +485,6 @@ form#item_comment_form{
     height: 40px;
     line-height: 40px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-
 }
 
 input#item_comment_text{
@@ -502,8 +501,59 @@ input#item_comment_btn{
     border: 1px solid white;
     padding: 8px 0;
 }
+/* userpage */
+div#user_filed{
+    background-color: #fff;
+    height: auto;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 40px;
+}
+div#user_img {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 130px;
+}
+p#user_name{
+    padding-top: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+ul#user_main_items{
+    width: 780px;
+    margin: 0 auto;
+}
+li#user_main_item{
+    width: 180px;
+    height: 220px;
+    float: left;
+    margin: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 
-/* ========================================
+}
+div#user_item_img{
+    width: 100%;
+    height: 170px;
+}
+div#user_item_img img{
+    width: 180px;
+    height: 170px;
+}
+div#user_item_edit input,#user_item_delete input{
+    width:300px;
+    height: 40px;
+    background-color: lightgreen;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 15px;
+}
+#user_item_delete input{
+    background-color: red;
+}
+/*=====================================
    footer
 ========================================= */
 footer{

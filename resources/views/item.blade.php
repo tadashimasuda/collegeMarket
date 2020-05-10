@@ -15,10 +15,22 @@
             <img src="/image/{{ $item->item_img }}" alt="">
         </div>
         <p id="item_detail_price">価格：{{$item->price}}円</p>
-            <div id="item_detail_business_box">
+        <div id="item_detail_business_box">
+            @if(Auth::id() == $user->id)
+                <form action="#" method="POST">
+                    @csrf
+                    <div id="user_item_edit">
+                        <input type="button" name='itemEdit' value="編集する">
+                    </div>
+                    <div id="user_item_delete">
+                        <input type="button" name="itemDelete" value="削除する">
+                    </div>
+                </form>
+            @else
                 <a href="#" id="item_detail_business">購入する</a>
                 <p>※価格交渉はコメント欄をご使用ください</p>
-            </div>
+            @endif
+        </div>
         <div id="item_description_box">
             <p id='item_description_title'>商品詳細</p>
             <p id='item_description'>{{ $item -> item_description }}</p>
