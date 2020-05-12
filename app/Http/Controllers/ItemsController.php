@@ -7,10 +7,23 @@ use App\Item;
 use App\User;
 use  App\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 use Laravel\Ui\Presets\React;
 
 class ItemsController extends Controller
 {
+
+
+    public function register(){
+        return view('item_register');
+    }
+    //serch like word from form_input 
+    public function search(Request $request){
+        $items = Item::Namelike($request->search_text)->get();
+        return view('search_items',['items' => $items,'input' => $request->search_text]);
+    }
+    
 
     /**
      * Display a listing of the resource.
@@ -23,21 +36,17 @@ class ItemsController extends Controller
             $items = Item::all();
             return view('top', ['items' => $items]);
     }
-
-    //serch like word from form_input 
-    public function search(Request $request){
-        $items = Item::Namelike($request->search_text)->get();
-        return view('search_items',['items' => $items,'input' => $request->search_text]);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        //get user id
+        $id = Auth::id();
+        Item::createItem($request,$id);
+        redirect('/top');
     }
 
     /**
@@ -79,7 +88,9 @@ class ItemsController extends Controller
      */
     public function edit($id)
     {
-        //
+        ////show item edit page
+        $item = Item::itemDetail($id)->first();
+        return view('editItem',['item' =>$item]);
     }
 
     /**
@@ -89,9 +100,14 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        //update item
+        //get user id
+        $userId = Auth::id();
+        Item::itemUpdate($request,$id,$userId);
+        redirect('/top');
+
     }
 
     /**

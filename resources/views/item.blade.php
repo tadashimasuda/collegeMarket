@@ -17,13 +17,18 @@
         <p id="item_detail_price">価格：{{$item->price}}円</p>
         <div id="item_detail_business_box">
             @if(Auth::id() == $user->id)
-                <form action="#" method="POST">
+                <form action="{{ route('items.edit',$item->id)}}" method="get">
                     @csrf
                     <div id="user_item_edit">
-                        <input type="button" name='itemEdit' value="編集する">
+                        <input type="hidden"  name="id" value="{{ $item->id }}">
+                        <input type="submit" name='itemEdit' value="編集する">
                     </div>
+                </form>
+
+                <form action="#" method="delete">
+                    @csrf
                     <div id="user_item_delete">
-                        <input type="button" name="itemDelete" value="削除する">
+                        <input type="submit" name="itemDelete" value="削除する">
                     </div>
                 </form>
             @else
@@ -43,7 +48,7 @@
                     <img src="/image/{{ $user->user_img }}" alt="">
                 </li>
                 <li id="item_user_name">
-                    <a href="/user/{{ $user->id }}">{{ $user->name }}</p>
+                    <a href="/user/{{ $user->id }}">{{ $user->name }}</a>
                 </li>
             </ul>
             <p id="item_user_name_icon">></p>

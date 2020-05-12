@@ -16,7 +16,7 @@ class Comment extends Model
         redirect('top');
     }
 
-    public function scopeitemComments($id){
-        return $this;
+    public function scopeitemComments($query,$id){
+        return $query->where('item_id',$id);
     }
 }

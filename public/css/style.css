@@ -145,7 +145,6 @@ ul#header_account li#new_account a{
 /* ========================================
    main
 ========================================= */
-
 div#top_img {
     margin-top: 30px;
 }
@@ -510,7 +509,7 @@ div#user_filed{
     margin-top: 20px;
     padding-top: 40px;
 }
-div#user_img {
+div#user_img{
     width: 130px;
     height: 130px;
     margin: 0 auto;
@@ -521,6 +520,10 @@ p#user_name{
     padding-top: 20px;
     font-size: 30px;
     text-align: center;
+}
+a#user_create_item{
+    padding: 10px 30px;
+    background-color: red;
 }
 ul#user_main_items{
     width: 780px;
@@ -545,7 +548,7 @@ div#user_item_img img{
 div#user_item_edit input,#user_item_delete input{
     width:300px;
     height: 40px;
-    background-color: lightgreen;
+    background-color: rgb(50, 175, 50);
     margin-bottom: 10px;
     color: white;
     font-size: 15px;

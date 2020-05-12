@@ -27,7 +27,7 @@
                     </div>
                     <div class="item_info">
                         <div class="item_title_box">
-                            <a href="/item/{{ $item -> id }}" class="item_title">{{ $item->title }}</a>
+                            <a href="/item/show/{{ $item -> id }}" class="item_title">{{ $item->title }}</a>
                         </div>
                         <div class="item_like">
 

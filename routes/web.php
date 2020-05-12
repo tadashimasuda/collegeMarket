@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,7 @@ Route::get('/top','ItemsController@index');
 Route::get('/items/find','ItemsController@search');
 
 //show item detail
-Route::get('/item/{id}','ItemsController@show');
+Route::get('/item/show/{id}/','ItemsController@show');
 
 //item comment
 Route::post('/comment','CommentsController@create');
@@ -27,8 +28,19 @@ Route::post('/comment','CommentsController@create');
 //show userpage
 Route::get('/user/{id}','UsersController@index');
 
+//show create item page middleware
+Route::get('/item/register','ItemsController@register');
 
-//Route::resource('items', 'ItemsController')->only(['index']);
+//create item middleware
+Route::post('/item/register','ItemsController@create');
+
+////show edit page middleware
+// Route::get('/item/edit','ItemsController@edit');
+// //edit item
+// Route::put('/item/update','ItemsController@update');
+
+
+Route::resource('items', 'ItemsController')->only(['index','edit','update']);
 
 //----------
 
