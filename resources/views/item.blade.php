@@ -16,7 +16,12 @@
         </div>
         <p id="item_detail_price">価格：{{$item->price}}円</p>
         <div id="item_detail_business_box">
-            @if(Auth::id() == $user->id)
+            <!-- DMpageへのボタン設置　条件：soldout buyer 出品者 -->
+            @if (( $item->soldout ==1 ) && ((Auth::id() == $user->id) || (Auth::id() == $item->buyer)))
+                <a href="/message" id="item_message">取引ページへ</a>
+            @elseif($item->soldout == 1)
+                <p>売り切れです</p>
+            @elseif($item->soldout == null && Auth::id() == $user->id)
                 <form action="{{ route('items.edit',$item->id)}}" method="get">
                     @csrf
                     <div id="user_item_edit">
@@ -32,7 +37,13 @@
                     </div>
                 </form>
             @else
-                <a href="#" id="item_detail_business">購入する</a>
+                <form action="/item/buy" method="post">
+                @csrf
+                @method('PUT')
+                    <input type="hidden"  name='itemsId' value="{{ $item->id }}">
+                    <input type="submit" id="item_detail_business" value="購入する">
+                </form>
+                <!-- <a href="#" id="item_detail_business">購入する</a> -->
                 <p>※価格交渉はコメント欄をご使用ください</p>
             @endif
         </div>

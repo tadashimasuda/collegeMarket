@@ -12,11 +12,13 @@ class Item extends Model
     {
         return $query->where('title', 'like', "%{$str}%");
     }
+
     //detail item 
     public function scopeitemDetail($query, $str)
     {
         return $query->where('id', $str);
     }
+
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -64,6 +66,12 @@ class Item extends Model
         $item ->category = $request ->itemsCategory;
         $item ->status = $request ->itemsStatus;
         $item->save();
+    }
 
+    public static function itemSoldout($buyer,$request){
+        $item = Item::find($request->itemsId);
+        $item->soldout = 1;
+        $item->buyer =$buyer;
+        $item->save();
     }
 }

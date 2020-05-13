@@ -372,8 +372,15 @@ div#item_detail_business_box{
     width: 280px;
     margin: 0 auto 50px auto; 
 }
-a#item_detail_business{
+input#item_detail_business{
     padding: 10px 100px;
+    color: white;
+    font-size: 18px;
+    background-color: red;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+a#item_message{
+    padding: 10px 50px;
     color: white;
     font-size: 18px;
     background-color: red;

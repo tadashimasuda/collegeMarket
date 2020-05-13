@@ -23,6 +23,13 @@ class ItemsController extends Controller
         $items = Item::Namelike($request->search_text)->get();
         return view('search_items',['items' => $items,'input' => $request->search_text]);
     }
+
+    public function itemBuy(Request $request){
+        $buyer=Auth::id();
+        //serach -> update　soldout
+        Item::itemSoldout($buyer,$request);
+        return redirect('/top');
+    }
     
 
     /**

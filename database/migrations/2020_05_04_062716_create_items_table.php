@@ -22,6 +22,8 @@ class CreateItemsTable extends Migration
             $table->integer('price');
             $table->integer('category');
             $table->integer('status');
+            $table->integer('soldout')->default(0);
+            $table->integer('buyer')->nullable();
             $table->integer('college');
             $table->integer('count_like')->default(0);
             $table->timestamps();

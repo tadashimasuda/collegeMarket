@@ -34,6 +34,13 @@ Route::get('/item/register','ItemsController@register');
 //create item middleware
 Route::post('/item/register','ItemsController@create');
 
+// buy item
+Route::put('/item/buy','ItemsController@itemBuy');
+
+//------route message 
+//item massage space
+Route::get('/message','MessagesController@index');
+
 ////show edit page middleware
 // Route::get('/item/edit','ItemsController@edit');
 // //edit item
