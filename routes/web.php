@@ -39,7 +39,8 @@ Route::put('/item/buy','ItemsController@itemBuy');
 
 //------route message 
 //item massage space
-Route::get('/message','MessagesController@index');
+// Route::get('/messages','MessagesController@index');
+Route::resource('messages', 'messagesController')->only(['index']);
 
 ////show edit page middleware
 // Route::get('/item/edit','ItemsController@edit');

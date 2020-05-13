@@ -18,7 +18,12 @@
         <div id="item_detail_business_box">
             <!-- DMpageへのボタン設置　条件：soldout buyer 出品者 -->
             @if (( $item->soldout ==1 ) && ((Auth::id() == $user->id) || (Auth::id() == $item->buyer)))
-                <a href="/message" id="item_message">取引ページへ</a>
+                <!-- <a href="/messages" id="item_message">取引ページへ</a> -->
+                <form action="/messages" method="get">
+                    @csrf
+                    <input type="hidden" name="item_id" value="{{ $item->id }}">
+                    <input type="submit" value="取引ページへ">
+                 </form>
             @elseif($item->soldout == 1)
                 <p>売り切れです</p>
             @elseif($item->soldout == null && Auth::id() == $user->id)
