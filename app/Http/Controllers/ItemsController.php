@@ -78,10 +78,8 @@ class ItemsController extends Controller
         //
         if($request->id){
             $item = Item::itemDetail($request->id)->first();
-            $user = User::find($item->user_id)->first();
-            $comments = Comment::itemComments($request->id)->get();
-            // $user = Item::where('id',$request->id)->with('user')->first();
-            return view('item',['item' => $item,'user' =>$user,'comments' =>$comments]);
+            // $comments = Comment::itemComments($request->id)->get();
+            return view('item',['item' => $item]);
         }else{
             route('top');
         }

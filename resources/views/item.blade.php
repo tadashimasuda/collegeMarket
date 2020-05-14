@@ -8,6 +8,7 @@
 @endsection
 
 @section('main')
+
 <div class="wrapper">
     <div id="item_detail">
         <h2 id="item_detail_title">{{ $item->title }}</h2>
@@ -17,16 +18,16 @@
         <p id="item_detail_price">価格：{{$item->price}}円</p>
         <div id="item_detail_business_box">
             <!-- DMpageへのボタン設置　条件：soldout buyer 出品者 -->
-            @if (( $item->soldout ==1 ) && ((Auth::id() == $user->id) || (Auth::id() == $item->buyer)))
+            @if (( $item->soldout ==1 ) && ((Auth::id() == $item->user->id) || (Auth::id() == $item->buyer)))
                 <!-- <a href="/messages" id="item_message">取引ページへ</a> -->
                 <form action="/messages" method="get">
                     @csrf
                     <input type="hidden" name="item_id" value="{{ $item->id }}">
-                    <input type="submit" value="取引ページへ">
+                    <input type="submit" id="trade_btn" value="取引ページへ">
                  </form>
             @elseif($item->soldout == 1)
                 <p>売り切れです</p>
-            @elseif($item->soldout == null && Auth::id() == $user->id)
+            @elseif($item->soldout == null && Auth::id() == $item->user->id)
                 <form action="{{ route('items.edit',$item->id)}}" method="get">
                     @csrf
                     <div id="user_item_edit">
@@ -61,10 +62,10 @@
             <!-- <h3 id="item_user_title">出品者情報</h3> -->
             <ul id="item_user">
                 <li id="item_user_img">
-                    <img src="/image/{{ $user->user_img }}" alt="">
+                    <img src="/image/{{ $item->user->user_img }}" alt="">
                 </li>
                 <li id="item_user_name">
-                    <a href="/user/{{ $user->id }}">{{ $user->name }}</a>
+                    <a href="/user/{{ $item->user->id}}">{{ $item->user->name }}</a>
                 </li>
             </ul>
             <p id="item_user_name_icon">></p>
@@ -74,7 +75,8 @@
             <div id="item_comment">
                 <!-- foreachでコメント回す -->
                 <ul id="comments">
-                    @foreach($comments as $comment)
+                
+                    @foreach($item->comment as $comment)
                         <li id="comment">
                             <img src="/image/" alt="" >
                             <p id="comment">{{$comment -> content }}</p>

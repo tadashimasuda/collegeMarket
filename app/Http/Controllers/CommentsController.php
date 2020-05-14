@@ -18,6 +18,6 @@ class CommentsController extends Controller
         $itemSenderId = Auth::id();
         $comment->addComment($itemSenderId,$request->itemId,$request->itemComment);
         // redirect('/item/'.$request->itemId);
-        redirect('top');
+        return redirect('/top');
     }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MessagesController extends Controller
 {
@@ -38,7 +40,19 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sender_id = Auth::id();
+        //$recieve_id = Message::getrecieve($sender_id)->first();
+        Item::
+        
+        //insert message
+        $message = new Message();
+        $message->item_id = $request->item_id;
+        //messages　if(Auth::id() != $message->recieverid)
+        // $message ->recieve_id = 
+        $message->sender_id =  $sender_id;
+        $message ->content = $request->messagesContent;
+        $message->save();
+        redirect('/top');
     }
 
     /**

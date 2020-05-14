@@ -21,8 +21,13 @@ class Item extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','user_id','id');
     }
+    public function comment(){
+        return $this->hasMany('App\Comment');
+    }
+
+    
 
     public function scopeuserItem($query, $id)
     {

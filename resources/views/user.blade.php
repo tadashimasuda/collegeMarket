@@ -15,9 +15,9 @@
         </div>
         <p id="user_name">{{ $user->name }}</p>
 
-        <a href="/item/register" id="user_create_item">出品する</a>
+        <a href="/item/register" id="user_item_btn">出品する</a>
         <ul id="user_main_items">
-            @foreach($items as $item)
+            @foreach($user->items as $item)
             <li id="user_main_item">
                 <div id="user_item_img">
                     <img src="/image/{{ $item->item_img }}" alt="">

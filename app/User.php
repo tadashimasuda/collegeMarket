@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function scopeuserInfo(){
         return $this;
     }
+
+    public function items(){
+        return $this->hasMany('App\Item');
+    }
 }
