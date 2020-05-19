@@ -14,8 +14,9 @@
             <img src="" alt="">
         </div>
         <p id="user_name">{{ $user->name }}</p>
-
+        @if(Auth::id() == $user->id)
         <a href="/item/register" id="user_item_btn">出品する</a>
+        @endif
         <ul id="user_main_items">
             @foreach($user->items as $item)
             <li id="user_main_item">

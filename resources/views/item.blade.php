@@ -46,7 +46,7 @@
                 <form action="/item/buy" method="post">
                 @csrf
                 @method('PUT')
-                    <input type="hidden"  name='itemsId' value="{{ $item->id }}">
+                    <input type="hidden"  name='itemId' value="{{ $item->id }}">
                     <input type="submit" id="item_detail_business" value="購入する">
                 </form>
                 <!-- <a href="#" id="item_detail_business">購入する</a> -->

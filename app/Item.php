@@ -26,6 +26,9 @@ class Item extends Model
     public function comment(){
         return $this->hasMany('App\Comment');
     }
+    public function userLike(){
+        return $this->hasOne('App\Userlike','item_id','id');
+    }
 
     
 
@@ -73,8 +76,8 @@ class Item extends Model
         $item->save();
     }
 
-    public static function itemSoldout($buyer,$request){
-        $item = Item::find($request->itemsId);
+    public static function itemSoldout($buyer,$itemId){
+        $item = Item::find($itemId);
         $item->soldout = 1;
         $item->buyer =$buyer;
         $item->save();

@@ -19,22 +19,24 @@ Route::get('/top','ItemsController@index');
 //items find keyword
 Route::get('/items/find','ItemsController@search');
 
+
+//item like middleware
+Route::get('/item/like/{id}','UserLikesController@create');
+
+//item like middleware
+Route::get('/item/unlike/{id}','UserLikesController@delete');
+
 //show item detail
 Route::get('/item/show/{id}/','ItemsController@show');
-
 //item comment
 Route::post('/comment','CommentsController@create');
-
 //show userpage
 Route::get('/user/{id}','UsersController@index');
-
 //show create item page middleware
 Route::get('/item/register','ItemsController@register');
-
 //create item middleware
 Route::post('/item/register','ItemsController@create');
-
-// buy item
+//purchase item
 Route::put('/item/buy','ItemsController@itemBuy');
 
 //------route message 

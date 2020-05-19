@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>@yield('title')</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     @yield('head')
 </head>
 
@@ -28,7 +29,14 @@
             <nav>
                 <ul id="header_account">
                     <li id="new_account"><a href="/select_register">新規作成</a></li>
+                    @if(Auth::check())
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <input type="submit" value="logout">
+                    </form>
+                    @else
                     <li id="login"><a href="/login_form">ログイン</a></li>
+                    @endif
                     <div class="clear_fix"></div>
                 </ul>
             </nav>

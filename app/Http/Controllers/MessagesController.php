@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Item;
+use App\Purchase;
 use App\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,16 +40,20 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
+        //get seller_id & buyer_id and sender_id
         $sender_id = Auth::id();
-        //$recieve_id = Message::getrecieve($sender_id)->first();
-        Item::
-        
+        // $purchase = Purchase::where('item_id',$request->item_id)->first();
+        $purchase = Purchase::find($request->item_id)->first();
+
         //insert message
         $message = new Message();
         $message->item_id = $request->item_id;
-        //messages　if(Auth::id() != $message->recieverid)
-        // $message ->recieve_id = 
-        $message->sender_id =  $sender_id;
+        if(Auth::id() == $purchase->seller_id){
+            $message ->recieve_id =  $purchase->buyer_id;
+        }else{
+            $message ->recieve_id =  $purchase->seller_id;
+        }
+        $message->sender_id = $sender_id;
         $message ->content = $request->messagesContent;
         $message->save();
         redirect('/top');

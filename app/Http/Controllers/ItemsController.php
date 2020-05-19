@@ -6,6 +6,8 @@ use Validator;
 use App\Item;
 use App\User;
 use  App\Comment;
+use App\Userlike;
+use App\Purchase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -27,11 +29,16 @@ class ItemsController extends Controller
     public function itemBuy(Request $request){
         $buyer=Auth::id();
         //serach -> update　soldout
-        Item::itemSoldout($buyer,$request);
+        Item::itemSoldout($buyer,$request->itemId);
+        //get item.seller & price
+        $itemData =Item::find($request->itemId);
+        $seller_id= $itemData->user_id;
+        $price =  $itemData->price;
+        //register purchase
+        Purchase::addData($buyer,$request->itemId,$seller_id,$price);
         return redirect('/top');
     }
     
-
     /**
      * Display a listing of the resource.
      *
@@ -53,7 +60,7 @@ class ItemsController extends Controller
         //get user id
         $id = Auth::id();
         Item::createItem($request,$id);
-        redirect('/top');
+        return redirect('/top');
     }
 
     /**
@@ -111,7 +118,7 @@ class ItemsController extends Controller
         //get user id
         $userId = Auth::id();
         Item::itemUpdate($request,$id,$userId);
-        redirect('/top');
+        return redirect('/top');
 
     }
 

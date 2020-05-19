@@ -13,9 +13,11 @@ class Message extends Model
     // public function users(){
     //     return $this->belongsTo('App\User','','id')
     // }
-
     public function items(){
-        return $this->belongsToMany('App\Item','item_id','id');
+        return $this->belongsTo('App\Item','item_id','id');
+    }
+    public function purchase(){
+        return $this->belongsTo('App\Purchase','item_id','id');
     }
 
     // public function scopegetrecieve($send_id){
