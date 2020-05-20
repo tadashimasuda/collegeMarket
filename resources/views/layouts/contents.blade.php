@@ -30,10 +30,12 @@
                 <ul id="header_account">
                     <li id="new_account"><a href="/select_register">新規作成</a></li>
                     @if(Auth::check())
+                    <li id="login">
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <input type="submit" value="logout">
+                        <input  id='header_logout' type="submit" value="logout">
                     </form>
+                    </li>
                     @else
                     <li id="login"><a href="/login_form">ログイン</a></li>
                     @endif

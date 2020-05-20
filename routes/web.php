@@ -20,23 +20,23 @@ Route::get('/top','ItemsController@index');
 Route::get('/items/find','ItemsController@search');
 
 //item like middleware
-Route::get('/item/like/{id}','UserLikesController@create');
+Route::get('/item/like/{id}','UserLikesController@create')->middleware('auth');
 
 //item like middleware
-Route::get('/item/unlike/{id}','UserLikesController@delete');
+Route::get('/item/unlike/{id}','UserLikesController@delete')->middleware('auth');
 
 //show item detail
 Route::get('/item/show/{id}/','ItemsController@show');
 //item comment
-Route::post('/comment','CommentsController@create');
+Route::post('/comment','CommentsController@create')->middleware('auth');
 //show userpage
 Route::get('/user/{id}','UsersController@index');
 //show create item page middleware
-Route::get('/item/register','ItemsController@register');
+Route::get('/item/register','ItemsController@register')->middleware('auth');
 //create item middleware
-Route::post('/item/register','ItemsController@create');
+Route::post('/item/register','ItemsController@create')->middleware('auth');
 //purchase item
-Route::put('/item/buy','ItemsController@itemBuy');
+Route::put('/item/buy','ItemsController@itemBuy')->middleware('auth');
 
 //------route message 
 //item massage space

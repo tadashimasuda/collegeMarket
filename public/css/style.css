@@ -127,6 +127,18 @@ ul#header_account li#login{
 ul#header_account li#login a{
     color: #fff;
 }
+input#header_logout{
+    float: left;
+    width: 80px;
+    height: 28px;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 0.3em;
+    text-align: center;
+    line-height: 28px;
+    color: white;
+    float: left;
+}
 ul#header_account li#new_account{
     float: left;
     width: 80px;

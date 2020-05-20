@@ -24,11 +24,26 @@
                     <img src="/image/{{ $item->item_img }}" alt="">
                 </div>
                 <div id="_useritem_info">
-                    <div id="user_item_title_box">
-                        <a href="/item/show/{{ $item -> id }}" id="user_item_title">{{ $item->title }}</a>
+                    <div id="item_title_box">
+                        <a href="/item/show/{{ $item -> id }}" id="item_title">{{ $item->title }}</a>
                     </div>
-                    <div id="user_item_like">
-
+                    <div id="item_like">
+                        <!-- like -->
+                        @if($item->userLike)
+                            @if(Auth::id() == $item->userLike->user_id)
+                                <a href="/item/unlike/{{ $item->id }}">
+                                    <i class="fas fa-heart fa-lg like_btn_red"></i>
+                                </a>
+                            @else
+                                <a href="/item/like/{{ $item->id }}">
+                                    <i class="far fa-heart fa-lg like_btn"></i>
+                                </a>
+                            @endif
+                        @else
+                            <a href="/item/like/{{ $item->id }}">
+                                <i class="far fa-heart fa-lg like_btn"></i>
+                            </a>
+                        @endif
                     </div>
                 </div>
             </li>

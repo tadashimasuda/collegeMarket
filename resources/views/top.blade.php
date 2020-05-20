@@ -18,11 +18,6 @@
         <ul class="main_items">
 
             @foreach($items as $item)
-
-            @if($item->userLike)
-                {{ $item->userLike->item_id }}
-            @endif
-
             <li class="item">
                 <div class="item_img">
                     <img src="image/{{ $item->item_img }}" alt="">
