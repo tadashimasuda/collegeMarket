@@ -18,12 +18,10 @@
     <div id="search_items">
         <ul class="main_items">
             @foreach( $items as $item )
-            @empty($item)
-            <p class="non-item">アイテムがありません</p>
-            @endempty
             <li class="item">
                 <div class="item_img">
-                    <img src="/image/{{ $item->item_img}}" alt="">
+                    <img src="{{ asset('/storage/images/'.$item->item_img)}}" alt="">
+                    
                 </div>
                 <div class="item_info">
                     <div class="item_title_box">

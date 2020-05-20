@@ -21,7 +21,7 @@
             @foreach($user->items as $item)
             <li id="user_main_item">
                 <div id="user_item_img">
-                    <img src="/image/{{ $item->item_img }}" alt="">
+                <img src="{{ asset('/storage/images/'.$item->item_img)}}" alt="">
                 </div>
                 <div id="_useritem_info">
                     <div id="item_title_box">

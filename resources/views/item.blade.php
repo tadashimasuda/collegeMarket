@@ -13,7 +13,7 @@
     <div id="item_detail">
         <h2 id="item_detail_title">{{ $item->title }}</h2>
         <div id="item_detail_img">
-            <img src="/image/{{ $item->item_img }}" alt="">
+        <img src="{{ asset('/storage/images/'.$item->item_img)}}" alt="">
         </div>
         <p id="item_detail_price">価格：{{$item->price}}円</p>
         <div id="item_detail_business_box">
