@@ -20,6 +20,10 @@ class Message extends Model
         return $this->belongsTo('App\Purchase','item_id','id');
     }
 
+    public function user(){
+        return $this->hasOne('App\User','id','sender_id');
+    }
+
     // public function scopegetrecieve($send_id){
     //     if($send_id == $this->sender_id){
                

@@ -29,8 +29,12 @@ class Item extends Model
     public function userLike(){
         return $this->hasOne('App\Userlike','item_id','id');
     }
-
-    
+    public function purchase(){
+        return $this->hasOne('App\Purchase','item_id','id');
+    }
+    public static function getPurchase($item_id){
+        return $this->where('item_id',$item_id);
+    }
 
     public function scopeuserItem($query, $id)
     {

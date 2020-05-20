@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\Purchase;
 use App\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class MessagesController extends Controller
 {
@@ -43,11 +45,12 @@ class MessagesController extends Controller
         //get seller_id & buyer_id and sender_id
         $sender_id = Auth::id();
         // $purchase = Purchase::where('item_id',$request->item_id)->first();
-        $purchase = Purchase::find($request->item_id)->first();
-
+        $item = Item::find($request->itemId);
+        $purchase = $item->purchase;
+      
         //insert message
         $message = new Message();
-        $message->item_id = $request->item_id;
+        $message->item_id = $request->itemId;
         if(Auth::id() == $purchase->seller_id){
             $message ->recieve_id =  $purchase->buyer_id;
         }else{
@@ -56,7 +59,7 @@ class MessagesController extends Controller
         $message->sender_id = $sender_id;
         $message ->content = $request->messagesContent;
         $message->save();
-        redirect('/top');
+        return back();
     }
 
     /**
